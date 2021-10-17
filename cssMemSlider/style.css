@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.main-wrapper {
+  width: 100%;
+}
+
+.slider-conteiner {
+  padding: 20px;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slides {
+  overflow: hidden;
+  padding: 20px;
+}
+
+.slides-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  position: relative;
+}
+
+.sliders-track__img {
+  border-radius: 10px;
+  display: none;
+  width: 100%;
+  height: 60vh;
+  object-fit: contain;
+  position: relative;
+  transition: transform 0.3s ease-out;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.img_prev {
+  display: block;
+
+  transform: translateX(-100vw);
+}
+
+.img_active {
+  display: block;
+  visibility: hidden;
+  transform: translateX(100vw);
+}
+.img_open {
+  visibility: unset;
+  transform: translateX(0);
+}
+
+.sliders-track__discript {
+  min-width: 100%;
+  opacity: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+.discript_active {
+  opacity: 1;
+}
+.discriptions-track {
+  display: flex;
+  transition: transform 0.5s;
+}
+.slides-discription {
+  width: 100%;
+  overflow: hidden;
+}
+
+.bullets-wraper {
+  display: flex;
+}
+
+.bullets__item {
+  content: "";
+  padding: 10px;
+  cursor: pointer;
+}
+.bullets__item::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: lightblue solid 5px;
+  background-color: lightblue;
+}
+
+.bullets__item:hover:before {
+  background-color: rgb(63, 202, 248);
+  border-color: rgb(63, 202, 248);
+}
+
+.bullet_active:before {
+  background-color: transparent;
+}
+.bullet_active:hover:before {
+  background-color: transparent;
+}
+
+.control-panel {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1024px) {
+  .control-panel {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .slider-bullets {
+    order: -1;
+  }
+}
