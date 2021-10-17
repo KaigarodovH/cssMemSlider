@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input[name="r"] {
+  display: none;
+}
+.main-wrapper {
+  width: 100%;
+}
+
+:root {
+  --size-slider: 60vw;
+  --size-discription: 300px;
+}
+
+#r1:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 0));
+}
+#r2:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 1));
+}
+#r3:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 2));
+}
+#r4:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 3));
+}
+#r5:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 4));
+}
+
+#r1:checked ~ .control-panel > .bullets-wraper > label:nth-child(1)::before {
+  background-color: transparent;
+}
+#r2:checked ~ .control-panel > .bullets-wraper > label:nth-child(2)::before {
+  background-color: transparent;
+}
+#r3:checked ~ .control-panel > .bullets-wraper > label:nth-child(3)::before {
+  background-color: transparent;
+}
+#r4:checked ~ .control-panel > .bullets-wraper > label:nth-child(4)::before {
+  background-color: transparent;
+}
+#r5:checked ~ .control-panel > .bullets-wraper > label:nth-child(5)::before {
+  background-color: transparent;
+}
+
+#r1:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 0));
+}
+#r2:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 1));
+}
+#r3:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 2));
+}
+#r4:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 3));
+}
+#r5:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 4));
+}
+#r6:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 5));
+}
+
+.slider-conteiner {
+  padding: 20px;
+  margin: 0 auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slides {
+  width: var(--size-slider);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.slides-track {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  transition: transform 0.3s ease-in-out;
+}
+.slide-wrapper {
+  min-width: var(--size-slider);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.sliders-track__img {
+  border-radius: 10px;
+  width: 90%;
+  height: 60vh;
+  object-fit: contain;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.sliders-track__discript {
+  text-align: center;
+  min-width: 100%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.discriptions-track {
+  display: flex;
+  transition: transform 0.5s;
+}
+
+.slides-discription {
+  max-width: var(--size-discription);
+  overflow: hidden;
+}
+
+.bullets-wraper {
+  display: flex;
+}
+
+/*-------------------Булеты-------------------*/
+
+.bullets__item {
+  content: "";
+  padding: 10px;
+  cursor: pointer;
+}
+.bullets__item::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: lightblue solid 5px;
+  background-color: lightblue;
+}
+
+.bullets__item:hover:before {
+  background-color: rgb(63, 202, 248);
+  border-color: rgb(63, 202, 248);
+}
+
+.bullets__item:focus {
+  background-color: transparent;
+}
+/*Булеты конец*/
+
+.control-panel {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1100px) {
+  .control-panel {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .bullets-wraper {
+    order: -1;
+  }
+  :root {
+    --size-slider: 80vw;
+  }
+}
