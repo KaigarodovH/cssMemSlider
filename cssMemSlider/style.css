@@ -22,25 +22,64 @@ img {
 input[name="r"] {
   display: none;
 }
-
-#r1:checked ~ .slides-track {
-  transform: translateX(calc(-80vw * 0));
-}
-#r2:checked ~ .slides-track {
-  transform: translateX(calc(-80vw * 1));
-}
-#r3:checked ~ .slides-track {
-  transform: translateX(calc(-80vw * 2));
-}
-#r4:checked ~ .slides-track {
-  transform: translateX(calc(-80vw * 3));
-}
-#r5:checked ~ .slides-track {
-  transform: translateX(calc(-80vw * 4));
-}
-
 .main-wrapper {
   width: 100%;
+}
+
+:root {
+  --size-slider: 60vw;
+  --size-discription: 300px;
+}
+
+#r1:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 0));
+}
+#r2:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 1));
+}
+#r3:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 2));
+}
+#r4:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 3));
+}
+#r5:checked ~ .slides-track {
+  transform: translateX(calc(-1 * var(--size-slider) * 4));
+}
+
+#r1:checked ~ .control-panel > .bullets-wraper > label:nth-child(1)::before {
+  background-color: transparent;
+}
+#r2:checked ~ .control-panel > .bullets-wraper > label:nth-child(2)::before {
+  background-color: transparent;
+}
+#r3:checked ~ .control-panel > .bullets-wraper > label:nth-child(3)::before {
+  background-color: transparent;
+}
+#r4:checked ~ .control-panel > .bullets-wraper > label:nth-child(4)::before {
+  background-color: transparent;
+}
+#r5:checked ~ .control-panel > .bullets-wraper > label:nth-child(5)::before {
+  background-color: transparent;
+}
+
+#r1:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 0));
+}
+#r2:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 1));
+}
+#r3:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 2));
+}
+#r4:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 3));
+}
+#r5:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 4));
+}
+#r6:checked ~ .control-panel > .slides-discription > .discriptions-track {
+  transform: translateX(calc(-1 * var(--size-discription) * 5));
 }
 
 .slider-conteiner {
@@ -53,19 +92,19 @@ input[name="r"] {
 }
 
 .slides {
-  width: 60vw;
-  padding: 20px 0;
+  width: var(--size-slider);
   overflow: hidden;
   box-sizing: border-box;
 }
 .slides-track {
+  padding: 20px 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   transition: transform 0.3s ease-in-out;
 }
 .slide-wrapper {
-  min-width: 60vw;
+  min-width: var(--size-slider);
   display: flex;
   justify-content: center;
   box-sizing: border-box;
@@ -81,29 +120,27 @@ input[name="r"] {
   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
-.img_active {
-  opacity: 1;
-}
-
 .sliders-track__discript {
+  text-align: center;
   min-width: 100%;
   font-family: "Ubuntu", sans-serif;
 }
-.discript_active {
-  opacity: 1;
-}
+
 .discriptions-track {
   display: flex;
   transition: transform 0.5s;
 }
+
 .slides-discription {
-  width: 100%;
+  max-width: var(--size-discription);
   overflow: hidden;
 }
 
 .bullets-wraper {
   display: flex;
 }
+
+/*-------------------Булеты-------------------*/
 
 .bullets__item {
   content: "";
@@ -125,30 +162,28 @@ input[name="r"] {
   border-color: rgb(63, 202, 248);
 }
 
-.bullet_active:before {
+.bullets__item:focus {
   background-color: transparent;
 }
-.bullet_active:hover:before {
-  background-color: transparent;
-}
+/*Булеты конец*/
 
 .control-panel {
-  width: 50%;
+  margin: 0 auto;
+  width: 80%;
   display: flex;
   justify-content: space-between;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1100px) {
   .control-panel {
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
-  .slider-bullets {
+  .bullets-wraper {
     order: -1;
   }
-  .slides,
-  .slide-wrapper {
-    min-width: 80vw;
+  :root {
+    --size-slider: 80vw;
   }
 }
