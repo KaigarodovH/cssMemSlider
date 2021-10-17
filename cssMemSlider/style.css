@@ -52,6 +52,7 @@ img {
 }
 .sliders-track__img {
   border-radius: 10px;
+  width: 90%;
   height: 60vh;
   opacity: 0;
   object-fit: contain;
