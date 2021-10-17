@@ -1,3 +1,6 @@
+//НЕ ИСПОЛЬЗУЕТСЯ
+
+/*
 let sliders = document.querySelectorAll(".sliders-track__img");
 let slidersContainer = document.querySelector(".slides-track");
 let sliderWrappers = document.querySelectorAll(".slide-wrapper");
@@ -30,3 +33,4 @@ function activeSlide(index){
 
     currActiveIndex = index;
 }
+*/

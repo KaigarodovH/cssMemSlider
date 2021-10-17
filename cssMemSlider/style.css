@@ -19,6 +19,26 @@ img {
   display: block;
 }
 
+input[name="r"] {
+  display: none;
+}
+
+#r1:checked ~ .slides-track {
+  transform: translateX(calc(-80vw * 0));
+}
+#r2:checked ~ .slides-track {
+  transform: translateX(calc(-80vw * 1));
+}
+#r3:checked ~ .slides-track {
+  transform: translateX(calc(-80vw * 2));
+}
+#r4:checked ~ .slides-track {
+  transform: translateX(calc(-80vw * 3));
+}
+#r5:checked ~ .slides-track {
+  transform: translateX(calc(-80vw * 4));
+}
+
 .main-wrapper {
   width: 100%;
 }
@@ -54,7 +74,6 @@ img {
   border-radius: 10px;
   width: 90%;
   height: 60vh;
-  opacity: 0;
   object-fit: contain;
   border-radius: 10px;
   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -68,7 +87,6 @@ img {
 
 .sliders-track__discript {
   min-width: 100%;
-  opacity: 0;
   font-family: "Ubuntu", sans-serif;
 }
 .discript_active {
